@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CICOS_Helper", "CICOS_Helper\CICOS_Helper.csproj", "{30613CDF-6C2E-455C-8FB6-CADEDD911E34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30613CDF-6C2E-455C-8FB6-CADEDD911E34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30613CDF-6C2E-455C-8FB6-CADEDD911E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30613CDF-6C2E-455C-8FB6-CADEDD911E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30613CDF-6C2E-455C-8FB6-CADEDD911E34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BA61B73-95B9-4B44-A72B-FFA8349A08B2}
+	EndGlobalSection
+EndGlobal
