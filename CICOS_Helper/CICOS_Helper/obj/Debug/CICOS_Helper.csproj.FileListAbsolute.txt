@@ -1,7 +1,6 @@
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\bin\Debug\CICOS_Helper.exe.config
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\bin\Debug\CICOS_Helper.exe
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\bin\Debug\CICOS_Helper.pdb
-D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\obj\Debug\CICOS_Helper.csprojResolveAssemblyReference.cache
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\obj\Debug\CICOS_Helper.frm_main.resources
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\obj\Debug\CICOS_Helper.Properties.Resources.resources
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\obj\Debug\CICOS_Helper.csproj.GenerateResource.cache
@@ -24,3 +23,8 @@ D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\bin
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\bin\Debug\Microsoft.Scripting.xml
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\bin\Debug\Microsoft.Scripting.Metadata.xml
 D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\obj\Debug\CICOS_Helper.csproj.CopyComplete
+D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\obj\Debug\CICOS_Helper.csprojResolveAssemblyReference.cache
+D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\obj\Debug\CICOS_Helper.exe.manifest
+D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\bin\Debug\CICOS_Helper.exe.manifest
+D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\bin\Debug\CICOS_Helper.application
+D:\Projects\Helper_for_CommissaryInChargeOfStudies\CICOS_Helper\CICOS_Helper\obj\Debug\CICOS_Helper.application

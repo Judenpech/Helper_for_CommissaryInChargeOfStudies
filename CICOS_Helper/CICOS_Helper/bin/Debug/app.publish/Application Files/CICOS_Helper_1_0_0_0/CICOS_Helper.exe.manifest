@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="CICOS_Helper.exe" version="1.0.0.0" publicKeyToken="b82a1381fd64a040" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="CICOS_Helper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="CICOS_Helper.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+         若想要更改 Windows 用户帐户控制级别，请
+         将 requestedExecutionLevel 节点替换为下述某项。
+
+       <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+       <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+       <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+        若想要使用文件和注册表虚拟化以实现向后
+        兼容，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CICOS_Helper.exe" size="157152">
+      <assemblyIdentity name="CICOS_Helper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>jhLaJfAtAeRzGfdcqW4F/Bw5HaYGLBwMnVbRqKpYY5I=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IronPython.dll" size="1801216">
+      <assemblyIdentity name="IronPython" version="2.7.8.0" publicKeyToken="7F709C5B713576E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>jgzEYEt62WxEAY683+HCyOzJ/uAdR9zRj3AaXHbS4Sc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IronPython.Modules.dll" size="705536">
+      <assemblyIdentity name="IronPython.Modules" version="2.7.8.0" publicKeyToken="7F709C5B713576E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Nr+/sgrBHW6Ff2dfZ1VVY3t+AgdK/zK/wu4ZPoSUF1A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IronPython.SQLite.dll" size="637440">
+      <assemblyIdentity name="IronPython.SQLite" version="2.7.8.0" publicKeyToken="7F709C5B713576E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Ry+uV0JtK9EUPVfgbaXzWDfPh+Z8h/963Ju+gZY9hns=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IronPython.Wpf.dll" size="7168">
+      <assemblyIdentity name="IronPython.Wpf" version="2.7.8.0" publicKeyToken="7F709C5B713576E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>M1B4ByBYPyOYUfpA75ftwTeWYkcP5d51Yfn9wPrETR8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Dynamic.dll" size="1069568">
+      <assemblyIdentity name="Microsoft.Dynamic" version="1.2.0.0" publicKeyToken="7F709C5B713576E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5iQSbwYoeFrF2VWc98rYv3E8w0NE1+1ixxFfP9dJbbw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Scripting.dll" size="140800">
+      <assemblyIdentity name="Microsoft.Scripting" version="1.2.0.0" publicKeyToken="7F709C5B713576E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8ORTQ1GLeDdEZlmMBScWoK3ZGnTh0DqHwSTNkWOVFMA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Scripting.Metadata.dll" size="89600">
+      <assemblyIdentity name="Microsoft.Scripting.Metadata" version="1.2.0.0" publicKeyToken="7F709C5B713576E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>vgw1s3DsaZvgFKj/pq3nFMkBjrW4k3h/dq9N/CZDbqE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.VisualStudio.CodeCoverage.Shim.dll" size="23336">
+      <assemblyIdentity name="Microsoft.VisualStudio.CodeCoverage.Shim" version="15.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>183S0+Aq2m3nuZ1nlb6jcCCjBAwSMvJT5v1XhTRiUMA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="CICOS_Helper.exe.config" size="182">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5ZhwxQuShk0adE1h6v6SFCnZBHaxNptRa19hfes61a8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icon.ico" size="67646">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>piqhkmYf+g338Esl0Q9pG6tKvlMGNH2RKKwYydzunhY=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=LENOVOYOGA3PRO\Lenovo" issuerKeyHash="40d0141a408e815109b687f23695e417f6912eb5" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>BqTAHlv76+Q7wCiaSIipu0D2QRBg9rf9RSQ64oyk1BE=</DigestValue></Reference></SignedInfo><SignatureValue>nAkdm2HNhS8v+jcGPrsO69Lvwqc0DXNLghq1hc/TulYOk78rrJx6YKhjyGBqS/eIBQ7bZ228JFPEXcma9SQ3maxTmYtUayf8wE9v7uNec8uOJVqRYFi6EQdQde2hFuXcu8CnAppdr1hHz12ktUviitiFuivAVZ4wx2/YH+0I/1c=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>y4GJPHtxL//QaLIsBUc7tYlahe8LcMF/ZUpsuIhgF2I65wNvP3GtngsLBJO3zkfemWUr98nZ8Bi863c50dZ7HbIyeNBU0wgGDQvZfDMpcU8qJm6m7MA/O2vHFJvQCFXLBtV1Ithy91KChuMCzP2LLP8Kck8mHshauaAbP75EPN0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="11d4a48ce23a2445fdb7f6601041f640bba988489a28c03be4ebfb5b1ec0a406" Description="" Url=""><as:assemblyIdentity name="CICOS_Helper.exe" version="1.0.0.0" publicKeyToken="b82a1381fd64a040" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LENOVOYOGA3PRO\Lenovo</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>10rgM2piNWYmTjAtVHzrpnVxmcKOHiXvi+Mqq+BETAA=</DigestValue></Reference></SignedInfo><SignatureValue>y3FOI+ll1CFJvhPQvliYg109p/Ov0ORV6R5BZ3PSadPvfBnZEgkB0qEXUXqYlMkn/dxWibeiO+RQbyt+Q9yI7Ua8edOpRjgCDNpnAtAOm6lcgSyu6BSe6MPD9kKvX7N3JxltU2S1oHxtk6FwAR06mCBF12zHk/ObylrzkNHWrnk=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>y4GJPHtxL//QaLIsBUc7tYlahe8LcMF/ZUpsuIhgF2I65wNvP3GtngsLBJO3zkfemWUr98nZ8Bi863c50dZ7HbIyeNBU0wgGDQvZfDMpcU8qJm6m7MA/O2vHFJvQCFXLBtV1Ithy91KChuMCzP2LLP8Kck8mHshauaAbP75EPN0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQKSpTt2RRZ6NC+6vBXUJjPTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioATABFAE4ATwBWAE8AWQBPAEcAQQAzAFAAUgBPAFwATABlAG4AbwB2AG8wHhcNMTgwNDA2MTQzNTQwWhcNMTkwNDA2MjAzNTQwWjA1MTMwMQYDVQQDHioATABFAE4ATwBWAE8AWQBPAEcAQQAzAFAAUgBPAFwATABlAG4AbwB2AG8wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMuBiTx7cS//0GiyLAVHO7WJWoXvC3DBf2VKbLiIYBdiOucDbz9xrZ4LCwSTt85H3pllK/fJ2fAYvOt3OdHWex2yMnjQVNMIBg0L2XwzKXFPKiZupuzAPztrxxSb0AhVywbVdSLYcvdSgobjAsz9iyz/CnJPJh7IWrmgGz++RDzdAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAlqSnqSa0UXB010aTYB2eq6vrH4Oy7gYWpBttEm3EIM4YWu/9tdjkXldY/n87cgOwTsml1vZZROlfsuXQ3haGNXy7evQkpzE7AtslKVnqcr/UQ6rChoxHH4e0879igsDgeKSoDusDHhtis9oJpbMQnOkymmRh5mbgC2UBNw2fXTA=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
