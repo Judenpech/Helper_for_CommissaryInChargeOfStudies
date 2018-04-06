@@ -47,6 +47,10 @@
 ### 执行操作
 - 选择需要执行的功能即可
 
+## 修改日志
+
+[See here](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/blob/master/Docs/Change%20Logs.md)
+
 ## 最后
 
 祝学委们玩得开心;)
