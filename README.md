@@ -4,6 +4,7 @@
 
 ## 简介
 该应用采用 C# 编写 WinForm 界面，Python 编写处理脚本。通过调用 Python 打包的 exe 可执行文件实现其功能。
+
 你可以在[ Application ](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/tree/master/Application) 中直接下载得到。
 
 主要的功能如下：
@@ -17,10 +18,22 @@
   - 添加文件名前缀，如：15信管3150707012 李靖
   - 添加文件名后缀：如：3150707012 李靖15信管
 
-### 概览
-![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/snipaste_20180406_231756.jpg)
+## 概览
 
-![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/snipaste_20180406_231832.jpg)
+### 打开文件
+![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/openFile.gif)
+
+### 作业查交
+
+![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/checkStu.gif)
+
+### 格式化命名
+
+![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/renameBasic.gif)
+
+### 扩展命名
+
+![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/renameEx.gif)
 
 ## 使用方法
 
@@ -50,7 +63,7 @@
 
 ## 下载
 
-[Download](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/tree/master/Application)
+[Download](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Download.zip)
 
 ## 修改日志
 
