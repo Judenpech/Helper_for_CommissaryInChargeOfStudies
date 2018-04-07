@@ -3,7 +3,8 @@
 学委除了要收作业，最烦的就是统计谁没有交作业啦，还有就是大家的命名不统一造成文件排序混乱，更加大了学委统计的难度。所以，写这个应用的目的就是查交和格式化文件命名。
 
 ## 简介
-该应用采用 C# 编写 WinForm 界面，Python 编写处理脚本。通过调用 Python 打包的 exe 可执行文件实现其功能。你可以在[ Application ](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/tree/master/Application) 中直接下载得到。
+该应用采用 C# 编写 WinForm 界面，Python 编写处理脚本。通过调用 Python 打包的 exe 可执行文件实现其功能。
+你可以在[ Application ](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/tree/master/Application) 中直接下载得到。
 
 主要的功能如下：
 
@@ -46,6 +47,10 @@
 
 ### 执行操作
 - 选择需要执行的功能即可
+
+## 下载
+
+[Download](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/tree/master/Application)
 
 ## 修改日志
 
