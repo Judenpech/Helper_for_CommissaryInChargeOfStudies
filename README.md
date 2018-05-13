@@ -63,7 +63,7 @@
 
 ## 下载
 
-[Download](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/%E5%AD%A6%E5%A7%94%E5%8A%A9%E6%89%8B.zip)
+[Download](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/%E5%AD%A6%E5%A7%94%E5%8A%A9%E6%89%8Bv1.1.zip)
 
 ## 修改日志
 
