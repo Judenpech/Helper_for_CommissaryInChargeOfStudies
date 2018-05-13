@@ -1,5 +1,6 @@
-import xlrd
+﻿import xlrd
 import os
+import traceback
 
 
 def open_excel(file):
@@ -57,27 +58,33 @@ def check_stu(excel_file="", open_dir=""):
     if cnt == 0:
         out = "已交齐！"
     else:
-        out = "未交人数：" + str(cnt) + " 人\n\n未交同学名单如下：\n\n" + out
+        out = "作业查交情况\n班级总人数：" + str(len(tables)) \
+              + " 人，未交人数：" + str(cnt) + " 人。\n未交同学名单如下：\n\n" \
+              + out
     return out
 
 
-def modi_all(excel_file="", open_dir="", sep=' '):
+def modi_all(excel_file="", open_dir="", sep=" "):
     tables = excel_table_byname(excel_file)
     modi_name = os.listdir(open_dir)
     cnt = 0
     suscnt = 0
-    for j in modi_name:
-        cnt += 1
-        for i in tables:
-            t = i["学号"]
-            if j.find(t) != -1:
-                indx = j.find('.')
-                new_name = i["学号"] + sep + i["姓名"] + j[indx:]
-                suscnt += 1
-                break
-        os.rename(open_dir + '\\' + str(j),
-                  open_dir + '\\' + new_name)
-    re = "重命名文件成功 " + str(suscnt) + " 个，失败 " + str(cnt - suscnt) + " 个。\n"
+    try:
+        for j in modi_name:
+            cnt += 1
+            for i in tables:
+                t = i["学号"]
+                if j.find(t) != -1:
+                    indx = j.find('.')
+                    new_name = i["学号"] + sep + i["姓名"] + j[indx:]
+                    suscnt += 1
+                    break
+            os.rename(open_dir + '\\' + str(j),
+                      open_dir + '\\' + str(new_name))
+        re = "重命名文件成功 " + str(suscnt) + " 个，失败 " \
+             + str(cnt - suscnt) + " 个。\n"
+    except:
+        re = traceback.format_exc()
     return re
 
 
@@ -86,17 +93,20 @@ def add_front(excel_file="", open_dir="", add=' '):
     modi_name = os.listdir(open_dir)
     cnt = 0
     suscnt = 0
-    for j in modi_name:
-        cnt += 1
-        for i in tables:
-            t = i["学号"]
-            if j.find(t) != -1:
-                new_name = add + j[0:]
-                suscnt += 1
-                break
-        os.rename(open_dir + '\\' + str(j),
-                  open_dir + '\\' + new_name)
-    re = "重命名文件成功 " + str(suscnt) + " 个，失败 " + str(cnt - suscnt) + " 个。\n"
+    try:
+        for j in modi_name:
+            cnt += 1
+            for i in tables:
+                t = i["学号"]
+                if j.find(t) != -1:
+                    new_name = add + j[0:]
+                    suscnt += 1
+                    break
+            os.rename(open_dir + '\\' + str(j),
+                      open_dir + '\\' + new_name)
+        re = "重命名文件成功 " + str(suscnt) + " 个，失败 " + str(cnt - suscnt) + " 个。\n"
+    except:
+        re = traceback.format_exc()
     return re
 
 
@@ -105,37 +115,40 @@ def add_back(excel_file="", open_dir="", add=' '):
     modi_name = os.listdir(open_dir)
     cnt = 0
     suscnt = 0
-    for j in modi_name:
-        cnt += 1
-        for i in tables:
-            t = i["学号"]
-            if j.find(t) != -1:
-                indx = j.find('.')
-                new_name = j[0:indx] + add + j[indx:]
-                suscnt += 1
-                break
-        os.rename(open_dir + '\\' + str(j),
-                  open_dir + '\\' + new_name)
-    re = "重命名文件成功 " + str(suscnt) + " 个，失败 " + str(cnt - suscnt) + " 个。\n"
+    try:
+        for j in modi_name:
+            cnt += 1
+            for i in tables:
+                t = i["学号"]
+                if j.find(t) != -1:
+                    indx = j.find('.')
+                    new_name = j[0:indx] + add + j[indx:]
+                    suscnt += 1
+                    break
+            os.rename(open_dir + '\\' + str(j),
+                      open_dir + '\\' + new_name)
+        re = "重命名文件成功 " + str(suscnt) + " 个，失败 " + str(cnt - suscnt) + " 个。\n"
+    except:
+        re=traceback.format_exc()
     return re
 
 
 def main():
     n = input()
-    l = n.split()
-    if n[0] == '1':
-        print(check_stu(l[1], l[2]))
-    elif n[0] == '2':
-        if len(l) == 4:
-            print(modi_all(l[1], l[2], l[3]))
-        else:
-            print(modi_all(l[1], l[2]))
-    elif n[0] == '3':
-        if l[1] == '1':
-            print(add_front(l[2], l[3], l[4]))
-        elif l[1] == '2':
-            print(add_back(l[2], l[3], l[4]))
+    ls = n.split("$")
+    if n[0] == '1':  # 作业查交
+        print(check_stu(ls[1], ls[2]))
+    elif n[0] == '2':  # 基础重命名
+        if ls[1] == '1':  # 指定分隔符
+            print(modi_all(ls[2], ls[3], ls[4]))
+        elif ls[1] == '2':  # 默认分隔符
+            print(modi_all(ls[2], ls[3]))
+    elif n[0] == '3':  # 扩展重命名
+        if ls[1] == '1':  # 前缀
+            print(add_front(ls[2], ls[3], ls[4]))
+        elif ls[1] == '2':  # 后缀
+            print(add_back(ls[2], ls[3], ls[4]))
 
 
 if __name__ == '__main__':
-    main();
+    main()

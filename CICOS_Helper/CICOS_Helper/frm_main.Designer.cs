@@ -32,12 +32,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.rtxb_output = new System.Windows.Forms.RichTextBox();
             this.btn_check = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_ok = new System.Windows.Forms.Button();
             this.btn_selectall = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.rbtn_default = new System.Windows.Forms.RadioButton();
             this.rbtn_sep = new System.Windows.Forms.RadioButton();
             this.rbtn_front = new System.Windows.Forms.RadioButton();
@@ -45,17 +45,17 @@
             this.txb_front = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rtxb_resEx = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_addOk = new System.Windows.Forms.Button();
             this.txb_back = new System.Windows.Forms.TextBox();
             this.rbtn_back = new System.Windows.Forms.RadioButton();
-            this.btn_addOk = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rtxb_resFd = new System.Windows.Forms.RichTextBox();
-            this.rtxb_resEx = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_open = new System.Windows.Forms.Button();
             this.txb_dir = new System.Windows.Forms.TextBox();
@@ -107,6 +107,17 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(39, 675);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(208, 30);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "报告问题/建议";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // rtxb_output
             // 
             this.rtxb_output.Location = new System.Drawing.Point(32, 99);
@@ -155,17 +166,6 @@
             this.btn_selectall.Text = "复制";
             this.btn_selectall.UseVisualStyleBackColor = true;
             this.btn_selectall.Click += new System.EventHandler(this.btn_selectall_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(39, 675);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(208, 30);
-            this.linkLabel1.TabIndex = 11;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "报告问题/建议";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // rbtn_default
             // 
@@ -223,7 +223,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(313, 30);
             this.label5.TabIndex = 5;
-            this.label5.Text = " 例：3150707012+张三";
+            this.label5.Text = " 例：3150707001+张三";
             // 
             // groupBox6
             // 
@@ -241,6 +241,34 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "扩展命名";
             // 
+            // rtxb_resEx
+            // 
+            this.rtxb_resEx.Location = new System.Drawing.Point(30, 335);
+            this.rtxb_resEx.Name = "rtxb_resEx";
+            this.rtxb_resEx.Size = new System.Drawing.Size(790, 156);
+            this.rtxb_resEx.TabIndex = 13;
+            this.rtxb_resEx.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(23, 275);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 39);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "label7";
+            // 
+            // btn_addOk
+            // 
+            this.btn_addOk.Location = new System.Drawing.Point(631, 250);
+            this.btn_addOk.Name = "btn_addOk";
+            this.btn_addOk.Size = new System.Drawing.Size(189, 65);
+            this.btn_addOk.TabIndex = 10;
+            this.btn_addOk.Text = "扩展";
+            this.btn_addOk.UseVisualStyleBackColor = true;
+            this.btn_addOk.Click += new System.EventHandler(this.btn_addOk_Click);
+            // 
             // txb_back
             // 
             this.txb_back.Location = new System.Drawing.Point(279, 147);
@@ -257,16 +285,6 @@
             this.rbtn_back.TabIndex = 8;
             this.rbtn_back.Text = "文件名后添加：";
             this.rbtn_back.UseVisualStyleBackColor = true;
-            // 
-            // btn_addOk
-            // 
-            this.btn_addOk.Location = new System.Drawing.Point(631, 250);
-            this.btn_addOk.Name = "btn_addOk";
-            this.btn_addOk.Size = new System.Drawing.Size(189, 65);
-            this.btn_addOk.TabIndex = 10;
-            this.btn_addOk.Text = "扩展";
-            this.btn_addOk.UseVisualStyleBackColor = true;
-            this.btn_addOk.Click += new System.EventHandler(this.btn_addOk_Click);
             // 
             // tabControl1
             // 
@@ -286,8 +304,8 @@
             this.tabPage1.Controls.Add(this.btn_check);
             this.tabPage1.Location = new System.Drawing.Point(10, 48);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(912, 1061);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(912, 1070);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "作业查交";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -298,31 +316,11 @@
             this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Location = new System.Drawing.Point(10, 48);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(912, 1070);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "格式化命名";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(23, 242);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 39);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "label6";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(23, 275);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 39);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "label7";
             // 
             // groupBox3
             // 
@@ -344,17 +342,19 @@
             // 
             this.rtxb_resFd.Location = new System.Drawing.Point(28, 296);
             this.rtxb_resFd.Name = "rtxb_resFd";
-            this.rtxb_resFd.Size = new System.Drawing.Size(772, 152);
+            this.rtxb_resFd.Size = new System.Drawing.Size(792, 152);
             this.rtxb_resFd.TabIndex = 8;
             this.rtxb_resFd.Text = "";
             // 
-            // rtxb_resEx
+            // label6
             // 
-            this.rtxb_resEx.Location = new System.Drawing.Point(30, 335);
-            this.rtxb_resEx.Name = "rtxb_resEx";
-            this.rtxb_resEx.Size = new System.Drawing.Size(770, 156);
-            this.rtxb_resEx.TabIndex = 13;
-            this.rtxb_resEx.Text = "";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(23, 242);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 39);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "label6";
             // 
             // label3
             // 

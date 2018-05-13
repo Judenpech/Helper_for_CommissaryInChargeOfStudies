@@ -33,9 +33,9 @@ namespace CICOS_Helper
             label2.Text = "1. 班级名单请以 Excel 表格形式存储。\n"
                 + "2. Excel 表格以\"学号\"和\"姓名\"作为列名并只保留这两列。\n"
                 + "3. 将要检查的所有文件保存在一个单独的文件夹中。\n"
-                +"4. 要检查的文件夹名不能带有空格。\n"
-                +"5. 请在所有操作之前备份文件，以免因操作不当造成文件损坏。\n"
-                +"6. 如果有任何疑问，请点击下方\"报告问题/建议\"。";
+                + "4. 要检查的文件夹名不能带有美元符号($)。\n"
+                + "5. 请在所有操作之前备份文件，以免因操作不当造成文件损坏。\n"
+                + "6. 如果有任何疑问，请点击下方\"报告问题/建议\"。";
             label6.Text = "操作结果：\n";
             label7.Text = "操作结果：\n";
         }
@@ -78,7 +78,7 @@ namespace CICOS_Helper
 
         private void btn_check_Click(object sender, EventArgs e)
         {
-            string input = "1 "+txb_fileName.Text.Trim() + " " + txb_dir.Text.Trim();
+            string input = "1" + "$" + txb_fileName.Text.Trim() + "$" + txb_dir.Text.Trim();
             //Console.WriteLine(input);
             try
             {
@@ -91,7 +91,7 @@ namespace CICOS_Helper
                 p.StartInfo.RedirectStandardError = true;  // 重定向错误输出  
                 p.Start();
                 p.StandardInput.WriteLine(input);
-                rtxb_output.Text =p.StandardOutput.ReadToEnd(); 
+                rtxb_output.Text = p.StandardOutput.ReadToEnd();
                 p.WaitForExit();
                 p.Close();
             }
@@ -100,7 +100,7 @@ namespace CICOS_Helper
                 MessageBox.Show("启动应用程序时出错！原因：" + ex.Message);
             }
         }
-        
+
         private void txb_fileName_TextChanged(object sender, EventArgs e)
         {
             if (txb_fileName.Text != "")
@@ -111,8 +111,7 @@ namespace CICOS_Helper
             {
                 f1 = 0;
             }
-            
-            if (f1==1 && f2==1)
+            if (f1 == 1 && f2 == 1)
             {
                 btn_check.Enabled = true;
                 btn_ok.Enabled = true;
@@ -122,18 +121,24 @@ namespace CICOS_Helper
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
-            string input="";
+            string input = "";
             if (rbtn_sep.Checked)
             {
-                input = "2 " + txb_fileName.Text.Trim() + " " + txb_dir.Text.Trim()+" "+txb_sep.Text.Trim();
+                if (txb_sep.Text == "" || txb_sep.Text == "$")
+                {
+                    MessageBox.Show("指定分隔符不能为空或“$”！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txb_sep.Focus();
+                }
+                else
+                {
+                    input = "2$1$" + txb_fileName.Text.Trim() + "$" + txb_dir.Text.Trim() + "$" + txb_sep.Text.Trim();
+                }
             }
             else
             {
-                input = "2 " + txb_fileName.Text.Trim() + " " + txb_dir.Text.Trim();
+                input = "2$2$" + txb_fileName.Text.Trim() + "$" + txb_dir.Text.Trim();
             }
-            
-            Console.WriteLine(input);
-
+            //Console.WriteLine(input);
             try
             {
                 Process p = new Process();
@@ -183,25 +188,34 @@ namespace CICOS_Helper
 
         private void btn_addOk_Click(object sender, EventArgs e)
         {
-            string input="";
-            if(txb_front.Text == "")
+            string input = "";
+            if (rbtn_front.Checked)
             {
-                MessageBox.Show("扩展内容不能为空，请输入扩展内容！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (txb_front.Text == "")
+                {
+                    MessageBox.Show("扩展内容不能为空，请输入扩展内容！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txb_front.Focus();
+                }
+                else
+                {
+                    input = "3$1$" + txb_fileName.Text.Trim() + "$" + txb_dir.Text.Trim() + "$" + txb_front.Text.Trim();
+                }
+
             }
-            else
+            if (rbtn_back.Checked)
             {
-                if (rbtn_front.Checked)
+                if (txb_back.Text == "")
                 {
-                    input = "3 1 " + txb_fileName.Text.Trim() + " " + txb_dir.Text.Trim() + " " + txb_front.Text.Trim();
+                    MessageBox.Show("扩展内容不能为空，请输入扩展内容！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txb_back.Focus();
                 }
-                else if(rbtn_back.Checked)
+                else
                 {
-                    input = "3 2 " + txb_fileName.Text.Trim() + " " + txb_dir.Text.Trim()+" "+txb_back.Text.Trim();
+                    input = "3$2$" + txb_fileName.Text.Trim() + "$" + txb_dir.Text.Trim() + "$" + txb_back.Text.Trim();
                 }
+
             }
-
-            Console.WriteLine(input);
-
+            //Console.WriteLine(input);
             try
             {
                 Process p = new Process();
