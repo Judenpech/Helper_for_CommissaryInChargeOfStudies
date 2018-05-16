@@ -52,6 +52,8 @@ namespace CICOS_Helper
         private void btn_open_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "请选择导入班级名单Excel文件";
+            //openFileDialog.Filter = "Excel 97-2003 工作簿|*.xls|Excel 工作簿|*.xlsx";
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -236,6 +238,25 @@ namespace CICOS_Helper
             {
                 MessageBox.Show("启动应用程序时出错！原因：" + ex.Message);
             }
+        }
+
+        private void txb_fileName_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Link;//调用DragDrop事件  
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void txb_fileName_DragDrop(object sender, DragEventArgs e)
+        {
+            string path = ((System.Array)e.Data.GetData(DataFormats.FileDrop)).GetValue(0).ToString();
+            MessageBox.Show(path);
+            this.txb_fileName.Text = path;
         }
 
         private void txb_dir_TextChanged(object sender, EventArgs e)

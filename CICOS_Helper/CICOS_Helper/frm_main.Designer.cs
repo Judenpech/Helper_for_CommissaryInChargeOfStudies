@@ -122,7 +122,7 @@
             // 
             this.rtxb_output.Location = new System.Drawing.Point(32, 99);
             this.rtxb_output.Name = "rtxb_output";
-            this.rtxb_output.Size = new System.Drawing.Size(544, 929);
+            this.rtxb_output.Size = new System.Drawing.Size(596, 929);
             this.rtxb_output.TabIndex = 6;
             this.rtxb_output.Text = "";
             this.rtxb_output.TextChanged += new System.EventHandler(this.rtxb_output_TextChanged);
@@ -145,7 +145,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(227, 39);
             this.label4.TabIndex = 6;
-            this.label4.Text = "未交同学名单：";
+            this.label4.Text = "作业查交情况：";
             // 
             // btn_ok
             // 
@@ -404,11 +404,14 @@
             // 
             // txb_fileName
             // 
+            this.txb_fileName.AllowDrop = true;
             this.txb_fileName.Location = new System.Drawing.Point(29, 117);
             this.txb_fileName.Name = "txb_fileName";
             this.txb_fileName.Size = new System.Drawing.Size(648, 42);
             this.txb_fileName.TabIndex = 1;
             this.txb_fileName.TextChanged += new System.EventHandler(this.txb_fileName_TextChanged);
+            this.txb_fileName.DragDrop += new System.Windows.Forms.DragEventHandler(this.txb_fileName_DragDrop);
+            this.txb_fileName.DragEnter += new System.Windows.Forms.DragEventHandler(this.txb_fileName_DragEnter);
             // 
             // groupBox2
             // 
@@ -436,6 +439,7 @@
             // 
             // frm_main
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScrollMargin = new System.Drawing.Size(10, 10);
