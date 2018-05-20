@@ -11,7 +11,7 @@ def open_excel(file):
         print(str(e))
 
 
-def excel_table_byname(file, colnameindex=0, by_name="Sheet1"):
+def excel_table_byname(file, colnameindex=0, by_name="Sheet1"):  # 获取Excel表格名单
     data = open_excel(file)
     table = data.sheet_by_name(by_name)  # 获得表格
     nrows = table.nrows  # 表格的总行数
@@ -27,110 +27,100 @@ def excel_table_byname(file, colnameindex=0, by_name="Sheet1"):
     return list
 
 
-def get_files_name(file_dir):
+def get_files_name(file_dir):  # 获取要检查的文件夹目录下所有文件夹名和文件名
     L = []
     for roots, dirs, files in os.walk(file_dir):
-        '''
-        if dirs:# 当前路径下所有子目录
-            L.append(dirs)
-        '''
-        if files:  # 当前路径下所有非目录子文件
-            for i in files:
-                L.append(i)
+        # dirs 是一个 list ，内容是该文件夹中所有的文件夹的名字(不包括子目录)
+        if dirs:
+            for d in dirs:
+                L.append(d)
+        # files是一个list，内容是该文件夹中所有的文件
+        if files:
+            for f in files:
+                L.append(f)
     return L
 
 
-def check_stu(excel_file="", open_dir=""):
+def check_stu(excel_file="", open_dir=""):  # 作业查交
     tables = excel_table_byname(excel_file)
-    open_List = get_files_name(open_dir)
+    filesList = get_files_name(open_dir)
     out = ""
     cnt = 0
-    for i in tables:
-        t = i["学号"]
+    for dic in tables:
+        stuNo = dic["学号"]
         flag = 1
-        for j in open_List:
-            if j.find(t) != -1:
+        for file in filesList:
+            if file.find(stuNo) != -1:
                 flag = 0
                 break
         if flag:
             cnt += 1
-            out += i["学号"] + "  " + i["姓名"] + '\n'
+            out += dic["学号"] + "  " + dic["姓名"] + '\n'
     if cnt == 0:
         out = "已交齐！"
     else:
-        out = "作业查交情况\n班级总人数：" + str(len(tables)) \
-              + " 人，未交人数：" + str(cnt) + " 人。\n未交同学名单如下：\n\n" \
+        total = len(tables)
+        submit = cnt
+        out = "=====作业查交情况=====\n班级总人数：" + str(total) \
+              + " 人\n上交作业人数：" + str(total - submit) + " 人\n未交作业人数：" \
+              + str(submit) + " 人\n======================\n未交作业同学名单：\n\n" \
               + out
     return out
 
 
-def modi_all(excel_file="", open_dir="", sep=" "):
+def modi_all(excel_file="", open_dir="", sep=" "):  # 批量格式化命名
     tables = excel_table_byname(excel_file)
-    modi_name = os.listdir(open_dir)
+    filesList = os.listdir(open_dir)  # 检查文件夹下的所有文件和文件夹
     cnt = 0
-    suscnt = 0
     try:
-        for j in modi_name:
-            cnt += 1
-            for i in tables:
-                t = i["学号"]
-                if j.find(t) != -1:
-                    indx = j.find('.')
-                    new_name = i["学号"] + sep + i["姓名"] + j[indx:]
-                    suscnt += 1
+        for file in filesList:
+            for dic in tables:
+                stuNo = dic["学号"]
+                if file.find(stuNo) != -1:
+                    dot = file.rfind('.')
+                    if dot != -1:
+                        newName = dic["学号"] + sep + dic["姓名"] + file[dot:]
+                    elif os.path.isdir(open_dir + '\\' + str(file)):
+                        newName = dic["学号"] + sep + dic["姓名"]
+                    os.rename(os.path.join(open_dir, file),
+                              os.path.join(open_dir, newName))
+                    cnt += 1
                     break
-            os.rename(open_dir + '\\' + str(j),
-                      open_dir + '\\' + str(new_name))
-        re = "重命名文件成功 " + str(suscnt) + " 个，失败 " \
-             + str(cnt - suscnt) + " 个。\n"
+        return "批量重命名文件 " + str(cnt) + " 个。"
     except:
-        re = traceback.format_exc()
-    return re
+        return "批量重命名文件失败！失败原因：\n" + traceback.format_exc()
 
 
-def add_front(excel_file="", open_dir="", add=' '):
-    tables = excel_table_byname(excel_file)
-    modi_name = os.listdir(open_dir)
+def add_front(open_dir="", add=""):  # 批量添加文件名前缀
+    filesList = os.listdir(open_dir)
     cnt = 0
-    suscnt = 0
     try:
-        for j in modi_name:
+        for file in filesList:
+            newName = add + file[0:]
             cnt += 1
-            for i in tables:
-                t = i["学号"]
-                if j.find(t) != -1:
-                    new_name = add + j[0:]
-                    suscnt += 1
-                    break
-            os.rename(open_dir + '\\' + str(j),
-                      open_dir + '\\' + new_name)
-        re = "重命名文件成功 " + str(suscnt) + " 个，失败 " + str(cnt - suscnt) + " 个。\n"
+            os.rename(open_dir + '\\' + str(file),
+                      open_dir + '\\' + newName)
+        return "批量添加前缀重命名文件 " + str(cnt) + " 个。"
     except:
-        re = traceback.format_exc()
-    return re
+        return "批量添加前缀重命名文件失败！失败原因：\n" + traceback.format_exc()
 
 
-def add_back(excel_file="", open_dir="", add=' '):
-    tables = excel_table_byname(excel_file)
-    modi_name = os.listdir(open_dir)
+def add_back(open_dir="", add=""):  # 批量添加文件名后缀
+    filesList = os.listdir(open_dir)
     cnt = 0
-    suscnt = 0
     try:
-        for j in modi_name:
+        for file in filesList:
+            dot = file.rfind(".")
+            if dot != -1:
+                newName = file[0:dot] + add + file[dot:]
+            else:
+                newName = file[0:] + add
             cnt += 1
-            for i in tables:
-                t = i["学号"]
-                if j.find(t) != -1:
-                    indx = j.find('.')
-                    new_name = j[0:indx] + add + j[indx:]
-                    suscnt += 1
-                    break
-            os.rename(open_dir + '\\' + str(j),
-                      open_dir + '\\' + new_name)
-        re = "重命名文件成功 " + str(suscnt) + " 个，失败 " + str(cnt - suscnt) + " 个。\n"
+            os.rename(open_dir + '\\' + str(file),
+                      open_dir + '\\' + newName)
+        return "批量添加后缀重命名文件 " + str(cnt) + " 个。"
     except:
-        re=traceback.format_exc()
-    return re
+        return "批量添加后缀重命名文件失败！失败原因：\n" + traceback.format_exc()
 
 
 def main():
