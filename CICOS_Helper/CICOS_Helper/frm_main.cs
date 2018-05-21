@@ -30,11 +30,11 @@ namespace CICOS_Helper
             btn_addOk.Enabled = false;
             rbtn_default.Select();
             rbtn_front.Select();
-            label2.Text = "1. 班级名单请以 Excel 表格形式存储。\n"
-                + "2. Excel 表格以\"学号\"和\"姓名\"作为列名并只保留这两列。\n"
-                + "3. 将要检查的所有文件保存在一个单独的文件夹中。\n"
-                + "4. 要检查的文件夹名不能带有美元符号($)。\n"
-                + "5. 请在所有操作之前备份文件，以免因操作不当造成文件损坏。\n"
+            label2.Text = "1. 班级名单请以 Excel 表格形式存储。\n\n"
+                + "2. Excel 表格以\"学号\"和\"姓名\"作为列名并只保留这两列。\n\n"
+                + "3. 将要检查的所有文件保存在一个单独的文件夹中。\n\n"
+                + "4. 要检查的文件夹名不能带有美元符号($)。\n\n"
+                + "5. 请在所有操作之前备份文件，以免因操作不当造成文件损坏。\n\n"
                 + "6. 如果有任何疑问，请点击下方\"报告问题/建议\"。";
             label6.Text = "操作结果：\n";
             label7.Text = "操作结果：\n";
@@ -200,7 +200,7 @@ namespace CICOS_Helper
                 }
                 else
                 {
-                    input = "3$1$" + txb_fileName.Text.Trim() + "$" + txb_dir.Text.Trim() + "$" + txb_front.Text.Trim();
+                    input = "3$1$" + txb_dir.Text.Trim() + "$" + txb_front.Text.Trim();
                 }
 
             }
@@ -213,7 +213,7 @@ namespace CICOS_Helper
                 }
                 else
                 {
-                    input = "3$2$" + txb_fileName.Text.Trim() + "$" + txb_dir.Text.Trim() + "$" + txb_back.Text.Trim();
+                    input = "3$2$" + txb_dir.Text.Trim() + "$" + txb_back.Text.Trim();
                 }
 
             }
@@ -240,23 +240,9 @@ namespace CICOS_Helper
             }
         }
 
-        private void txb_fileName_DragEnter(object sender, DragEventArgs e)
+        private void btn_clear_Click(object sender, EventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                e.Effect = DragDropEffects.Link;//调用DragDrop事件  
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
-            }
-        }
-
-        private void txb_fileName_DragDrop(object sender, DragEventArgs e)
-        {
-            string path = ((System.Array)e.Data.GetData(DataFormats.FileDrop)).GetValue(0).ToString();
-            MessageBox.Show(path);
-            this.txb_fileName.Text = path;
+            rtxb_output.Text = "";
         }
 
         private void txb_dir_TextChanged(object sender, EventArgs e)
@@ -264,17 +250,18 @@ namespace CICOS_Helper
             if (txb_dir.Text != "")
             {
                 f2 = 1;
+                btn_addOk.Enabled = true;
             }
             else
             {
                 f2 = 0;
+                btn_addOk.Enabled = false;
             }
 
             if (f1 == 1 && f2 == 1)
             {
                 btn_check.Enabled = true;
                 btn_ok.Enabled = true;
-                btn_addOk.Enabled = true;
             }
         }
     }

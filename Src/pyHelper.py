@@ -135,9 +135,9 @@ def main():
             print(modi_all(ls[2], ls[3]))
     elif n[0] == '3':  # 扩展重命名
         if ls[1] == '1':  # 前缀
-            print(add_front(ls[2], ls[3], ls[4]))
+            print(add_front(ls[2], ls[3]))
         elif ls[1] == '2':  # 后缀
-            print(add_back(ls[2], ls[3], ls[4]))
+            print(add_back(ls[2], ls[3]))
 
 
 if __name__ == '__main__':
