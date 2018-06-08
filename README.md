@@ -25,15 +25,15 @@
 
 ### 作业查交
 
-![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/checkStu.gif)
+![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/check.gif)
 
-### 格式化命名
+### 基础命名
 
-![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/renameBasic.gif)
+![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/basicRename.gif)
 
 ### 扩展命名
 
-![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/renameEx.gif)
+![](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/Preview/extraRename.gif)
 
 ## 使用方法
 
@@ -56,14 +56,14 @@
 
 ### 启动应用
 - 双击“学委助手.exe”
-- 注意，pyHelper.exe 需要和"学委助手.exe"放置在在同一路径中，并且不要修改它的名字
+- 注意：pyHelper.exe 需要和"学委助手.exe"放置在在同一路径中，并且不要修改它的名字
 
 ### 执行操作
 - 选择需要执行的功能即可
 
 ## 下载
 
-[Download](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/%E5%AD%A6%E5%A7%94%E5%8A%A9%E6%89%8Bv1.1.zip)
+[Download](https://github.com/jl223vy/Helper_for_CommissaryInChargeOfStudies/raw/master/%E5%AD%A6%E5%A7%94%E5%8A%A9%E6%89%8BV1.2.zip)
 
 ## 修改日志
 
