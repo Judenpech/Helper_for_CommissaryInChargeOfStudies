@@ -202,7 +202,6 @@ namespace CICOS_Helper
                 {
                     input = "3$1$" + txb_dir.Text.Trim() + "$" + txb_front.Text.Trim();
                 }
-
             }
             if (rbtn_back.Checked)
             {
@@ -215,9 +214,8 @@ namespace CICOS_Helper
                 {
                     input = "3$2$" + txb_dir.Text.Trim() + "$" + txb_back.Text.Trim();
                 }
-
             }
-            //Console.WriteLine(input);
+            Console.WriteLine(input);
             try
             {
                 Process p = new Process();
@@ -257,7 +255,6 @@ namespace CICOS_Helper
                 f2 = 0;
                 btn_addOk.Enabled = false;
             }
-
             if (f1 == 1 && f2 == 1)
             {
                 btn_check.Enabled = true;
