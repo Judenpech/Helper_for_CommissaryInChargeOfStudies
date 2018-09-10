@@ -125,6 +125,7 @@
             this.rtxb_output.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtxb_output.Location = new System.Drawing.Point(37, 96);
             this.rtxb_output.Name = "rtxb_output";
+            this.rtxb_output.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
             this.rtxb_output.Size = new System.Drawing.Size(592, 959);
             this.rtxb_output.TabIndex = 6;
             this.rtxb_output.Text = "";
@@ -289,6 +290,7 @@
             this.rtxb_resFd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtxb_resFd.Location = new System.Drawing.Point(37, 399);
             this.rtxb_resFd.Name = "rtxb_resFd";
+            this.rtxb_resFd.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
             this.rtxb_resFd.Size = new System.Drawing.Size(793, 529);
             this.rtxb_resFd.TabIndex = 8;
             this.rtxb_resFd.Text = "";
@@ -336,6 +338,7 @@
             this.rtxb_resEx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtxb_resEx.Location = new System.Drawing.Point(37, 399);
             this.rtxb_resEx.Name = "rtxb_resEx";
+            this.rtxb_resEx.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
             this.rtxb_resEx.Size = new System.Drawing.Size(793, 529);
             this.rtxb_resEx.TabIndex = 13;
             this.rtxb_resEx.Text = "";
@@ -428,9 +431,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 30);
+            this.label1.Size = new System.Drawing.Size(223, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "打开班级名单【Excel】：";
+            this.label1.Text = "打开班级名单：";
             // 
             // btn_openCheck
             // 
@@ -490,7 +493,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "学委助手V1.2                               ";
+            this.Text = "学委助手                               ";
             this.Load += new System.EventHandler(this.frm_main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
